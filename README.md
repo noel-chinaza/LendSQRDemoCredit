@@ -61,7 +61,7 @@ npm run test
 
 # E-R Diagram
 
-![E-R Diagram](ER_Diagram.png?raw=true)
+![E-R Diagram](/ER_Diagram.png)
 
 # Stack
 
