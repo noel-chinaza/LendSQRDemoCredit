@@ -1,4 +1,5 @@
 import { RequestHandler, Request } from "express";
+import { AnySchema } from "yup";
 import { WrapIV2DataWrap, ErrorCodes } from "..";
 
 export var GenericChecker = function (
@@ -18,3 +19,8 @@ export var GenericChecker = function (
 		}
 	};
 };
+
+export async function GenericCheckerInternal(schema: AnySchema, obj) {
+	obj = schema.cast(obj, { stripUnknown: false });
+	return await schema.validate(obj);
+}

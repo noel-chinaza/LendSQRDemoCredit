@@ -1,7 +1,6 @@
 import { Account, PrismaClient, PrismaPromise } from "@prisma/client";
 const prisma = new PrismaClient();
 
-
 /* this is a class that abstracts the complexities of a traditional accountign system */
 class Transaction {
 	private debitAmounts: { amount: number; accountId: number }[] = [];
@@ -24,7 +23,7 @@ class Transaction {
 				data: {
 					debitAmount: amountToDebit,
 					description: this.comment,
-					debitAccountID: accountToDebit.id,
+					debitAccount: { connect: { id: accountToDebit.id } },
 				},
 			})
 		);
@@ -41,7 +40,7 @@ class Transaction {
 				data: {
 					creditAmount: amountToCredit,
 					description: this.comment,
-					creditAccountID: accountToCredit.id,
+					creditAccount: { connect: { id: accountToCredit.id } },
 				},
 			})
 		);
@@ -102,7 +101,7 @@ class Transaction {
 				account.id,
 				resultMap.get(account.id)! + account.balance!.toNumber()
 			);
-            // add the database transactions to actually commit the balance
+			// add the database transactions to actually commit the balance
 			this.transactions.push(
 				prisma.account.update({
 					where: {
@@ -119,6 +118,5 @@ class Transaction {
 		await prisma.$transaction(this.transactions);
 	}
 }
-
 
 export { Transaction };

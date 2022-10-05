@@ -4,9 +4,9 @@
   "description": "Demo Credit is a mobile lending app that requires wallet functionality. This is needed as borrowers need a wallet to receive the loans they have been granted and also send the money for repayments.",
   "main": "index.js",
   "scripts": {
-    "migrate": "npx prisma db migrate && npx prisma generate && npx prisma db seed",
+    "migrate": "npx prisma migrate dev && npx prisma generate && npx prisma db seed",
     "dev": "nodemon server/bin.ts",
-    "test": "jest"
+    "test": "ts-node clean_system.ts && jest"
   },
   "prisma": {
     "seed": "ts-node prisma/seed/_index.ts"
@@ -19,6 +19,7 @@
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
+    "ts-node": "^10.9.1",
     "yup": "^0.32.11"
   },
   "devDependencies": {
