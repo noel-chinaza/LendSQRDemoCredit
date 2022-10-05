@@ -18,14 +18,16 @@ model User {
   id        Int       @id @default(autoincrement())
   createdAt DateTime  @default(now())
   name      String    @unique
-  hash      String?    @db.LongText
+  hash      String?   @db.LongText
   salt      String?
-  accounts  Account[]
-  payments  Payment[]
+  userTier  UserTier? @default(CIVILIAN)
+
+  accounts Account[]
+  payments Payment[]
 }
 
 model Account {
-  id      Int     @id @default(autoincrement())
+  id      Int      @id @default(autoincrement())
   balance Decimal? @default(0.00)
 
   user    User               @relation(fields: [userId], references: [id])
@@ -69,4 +71,9 @@ enum PaymentGateway {
 enum PaymentStatus {
   PENDING
   FULFILLED
+}
+
+enum UserTier {
+  GOD
+  CIVILIAN
 }

@@ -9,8 +9,8 @@ export abstract class Gateway {
 	 fulfillTransaction(payment: Payment & { user: User }){}
 }
 
-class PaymentGatewayEntrance {
-	public async paymentReceived(transactionReference: string, amount: number) {
+export class PaymentGatewayEntrance {
+	public static async paymentReceived(transactionReference: string, amount: number) {
 		const payment = await prisma.payment.findFirst({
 			include: { user: true },
 			where: { transactionReference },
@@ -24,7 +24,7 @@ class PaymentGatewayEntrance {
 		if (payment.amount.toNumber() >= amount) {
 			switch (payment?.gateway) {
 				case PaymentGateway.PAYSTACK:
-					PaystackPaymentGateway.getInstance().fulfillTransaction(payment);
+					await PaystackPaymentGateway.getInstance().fulfillTransaction(payment);
 					break;
 				default:
 					throw "no payment fulfillers for that provider";

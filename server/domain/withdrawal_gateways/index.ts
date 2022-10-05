@@ -10,8 +10,8 @@ export abstract class Gateway{
 	completeWithdrawal(amount: number, user: User){}
 }
 
-class WithdrawalChannelEntrance {
-	public async withdraw(amount: number, gateway: WithdrawalGateway, user: User) {
+export class WithdrawalChannelEntrance {
+	public static async withdraw(amount: number, gateway: WithdrawalGateway, user: User) {
 
 		const userAccount = await prisma.account.findFirst({
 			where: {
@@ -28,7 +28,7 @@ class WithdrawalChannelEntrance {
 		if (userAccount.balance!.toNumber() >= amount) {
 			switch (gateway) {
 				case "BANK":
-					BankWithdrawalGateway.getInstance().completeWithdrawal(amount, user);
+					await BankWithdrawalGateway.getInstance().completeWithdrawal(amount, user);
 					break;
 				default:
 					throw "no gateways implemented for that provider";

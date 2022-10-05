@@ -8,6 +8,7 @@ Table User {
   name String [unique, not null]
   hash String
   salt String
+  userTier UserTier [default: 'CIVILIAN']
   accounts Account [not null]
   payments Payment [not null]
 }
@@ -51,6 +52,11 @@ Enum PaymentGateway {
 Enum PaymentStatus {
   PENDING
   FULFILLED
+}
+
+Enum UserTier {
+  GOD
+  CIVILIAN
 }
 
 Ref: Account.userId > User.id

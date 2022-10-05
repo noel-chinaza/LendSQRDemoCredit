@@ -1,4 +1,4 @@
-import { Prisma, PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient, UserTier } from "@prisma/client";
 import { SYSTEM_ACCOUNT_USER_NAME } from "../../server/config/default";
 import { Accounts } from "../../server/domain/classes/accounts";
 
@@ -11,6 +11,7 @@ export async function exec() {
 		},
 		create: {
 			name: SYSTEM_ACCOUNT_USER_NAME,
+			userTier: UserTier.GOD,
 			accounts: {
 				createMany: {
 					data: [
@@ -29,6 +30,7 @@ export async function exec() {
 							tag: Accounts.getWithdrawalBinAccount("CRYPTO"),
 						},
 					],
+					skipDuplicates: true,
 				},
 			},
 		},
