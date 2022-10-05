@@ -1,0 +1,1 @@
+export const SYSTEM_ACCOUNT_USER_NAME: string = "system0";

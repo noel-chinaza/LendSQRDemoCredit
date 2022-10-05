@@ -18,33 +18,55 @@ model User {
   id        Int       @id @default(autoincrement())
   createdAt DateTime  @default(now())
   name      String    @unique
-  hash      String    @db.LongText
-  salt      String
-  account   Account[]
+  hash      String?    @db.LongText
+  salt      String?
+  accounts  Account[]
+  payments  Payment[]
 }
 
 model Account {
   id      Int     @id @default(autoincrement())
-  balance Decimal
+  balance Decimal? @default(0.00)
 
   user    User               @relation(fields: [userId], references: [id])
   debits  TransactionEntry[] @relation("debits")
   credits TransactionEntry[] @relation("credits")
 
   userId Int
-  tag    String
+  tag    String @unique
 }
 
 model TransactionEntry {
   id          Int    @id @default(autoincrement())
   description String
 
-  debitAccount Account @relation(name: "debits", fields: [debitAccountID], references: [id])
-  debitAmount  Decimal
+  debitAccount Account? @relation(name: "debits", fields: [debitAccountID], references: [id])
+  debitAmount  Decimal  @default(0.0)
 
-  creditAccount Account @relation(name: "credits", fields: [creditAccountID], references: [id])
-  creditAmount  Decimal
+  creditAccount Account? @relation(name: "credits", fields: [creditAccountID], references: [id])
+  creditAmount  Decimal  @default(0.0)
 
-  debitAccountID  Int
-  creditAccountID Int
+  debitAccountID  Int?
+  creditAccountID Int?
+}
+
+model Payment {
+  id                   Int            @id @default(autoincrement())
+  transactionReference String         @unique @default(cuid())
+  amount               Decimal        @default(0.0)
+  gateway              PaymentGateway
+  status               PaymentStatus  @default(PENDING)
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+}
+
+enum PaymentGateway {
+  PAYSTACK
+  FLUTTERWAVE
+}
+
+enum PaymentStatus {
+  PENDING
+  FULFILLED
 }

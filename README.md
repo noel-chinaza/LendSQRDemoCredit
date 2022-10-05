@@ -7,3 +7,5 @@ A user can create an account
 A user can fund their account
 A user can transfer funds to another user’s account
 A user can withdraw funds from their account.
+
+This project utilizes a traditional accounting system. The cardinal rule of double-entry accounting is that "for every debit entry, there must be a corresponding credit entry" which means "everything must balance out to zero", and that rule is applied to every transaction written to the system

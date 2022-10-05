@@ -1,0 +1,62 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table User {
+  id Int [pk, increment]
+  createdAt DateTime [default: `now()`, not null]
+  name String [unique, not null]
+  hash String
+  salt String
+  accounts Account [not null]
+  payments Payment [not null]
+}
+
+Table Account {
+  id Int [pk, increment]
+  balance Decimal [default: 0]
+  user User [not null]
+  debits TransactionEntry [not null]
+  credits TransactionEntry [not null]
+  userId Int [not null]
+  tag String [unique, not null]
+}
+
+Table TransactionEntry {
+  id Int [pk, increment]
+  description String [not null]
+  debitAccount Account
+  debitAmount Decimal [not null, default: 0]
+  creditAccount Account
+  creditAmount Decimal [not null, default: 0]
+  debitAccountID Int
+  creditAccountID Int
+}
+
+Table Payment {
+  id Int [pk, increment]
+  transactionReference String [unique, not null]
+  amount Decimal [not null, default: 0]
+  gateway PaymentGateway [not null]
+  status PaymentStatus [not null, default: 'PENDING']
+  user User [not null]
+  userId Int [not null]
+}
+
+Enum PaymentGateway {
+  PAYSTACK
+  FLUTTERWAVE
+}
+
+Enum PaymentStatus {
+  PENDING
+  FULFILLED
+}
+
+Ref: Account.userId > User.id
+
+Ref: TransactionEntry.debitAccountID > Account.id
+
+Ref: TransactionEntry.creditAccountID > Account.id
+
+Ref: Payment.userId > User.id
