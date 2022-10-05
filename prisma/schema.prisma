@@ -5,7 +5,46 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator dbml {
+  provider = "prisma-dbml-generator"
+}
+
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  name      String    @unique
+  hash      String    @db.LongText
+  salt      String
+  account   Account[]
+}
+
+model Account {
+  id      Int     @id @default(autoincrement())
+  balance Decimal
+
+  user    User               @relation(fields: [userId], references: [id])
+  debits  TransactionEntry[] @relation("debits")
+  credits TransactionEntry[] @relation("credits")
+
+  userId Int
+  tag    String
+}
+
+model TransactionEntry {
+  id          Int    @id @default(autoincrement())
+  description String
+
+  debitAccount Account @relation(name: "debits", fields: [debitAccountID], references: [id])
+  debitAmount  Decimal
+
+  creditAccount Account @relation(name: "credits", fields: [creditAccountID], references: [id])
+  creditAmount  Decimal
+
+  debitAccountID  Int
+  creditAccountID Int
 }
