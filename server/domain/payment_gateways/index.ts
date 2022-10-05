@@ -1,6 +1,6 @@
 import { Payment, PaymentGateway, PrismaClient, User } from "@prisma/client";
 import { isNil } from "lodash";
-import { PaystackPaymentGateway } from "./paystack.gateway";
+import { PaystackPaymentGateway } from "./paystack_deposit.gateway";
 
 const prisma = new PrismaClient();
 

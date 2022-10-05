@@ -1,7 +1,7 @@
 import { Payment, PaymentGateway, PrismaClient, User } from "@prisma/client";
 import { isNil } from "lodash";
 import { Accounts, WithdrawalGateway } from "../classes/accounts";
-import { BankWithdrawalGateway } from "./bank.gateway";
+import { BankWithdrawalGateway } from "./bank_withdrawal.gateway";
 
 const prisma = new PrismaClient();
 
