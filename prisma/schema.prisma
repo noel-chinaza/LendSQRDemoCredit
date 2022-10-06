@@ -10,8 +10,8 @@ generator client {
 // }
 
 datasource db {
-  provider = "mysql"
-  // provider = "postgresql"
+  // provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -19,8 +19,8 @@ model User {
   id        Int       @id @default(autoincrement())
   createdAt DateTime  @default(now())
   name      String    @unique
-  hash        String?   @db.LongText
-  // hash        String?   @db.Text
+  // hash        String?   @db.LongText
+  hash        String?   @db.Text
   salt      String?
   userTier  UserTier? @default(CIVILIAN)
 
