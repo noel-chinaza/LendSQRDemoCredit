@@ -7,3 +7,4 @@ package-lock.json
 
 # don't put dist files on github, only put on heroku
 **/dist
+# **/coverage
