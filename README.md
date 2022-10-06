@@ -66,8 +66,7 @@ npm run test
 # Postman Collection
 
 The postman collectino can be downloaded at ![Postman Collection](/DemoCredit%20LendSQR.postman_collection.json)
-Here's a live documentation link as well: 
-
+Here's a live documentation link as well: ![Live Postman Documentation](https://documenter.getpostman.com/view/23161852/2s83zdx6qi)
 
 
 # Stack

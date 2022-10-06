@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "7d03b4ef-27d7-46e5-8915-dcb7bc8ba959",
 		"name": "DemoCredit LendSQR",
+		"description": "This collection provides details on how to invoke the API of DemoCredit\n\nFor every action (deposit, transfers, withdrawals) that changes the logged in user's balance, there's a detail of the logged in user's account balance included in the response body",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23161852"
 	},
@@ -27,12 +28,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/v1/user/register",
-					"protocol": "http",
+					"raw": "https://noel-lendsqr-be-test.herokuapp.com/v1/user/register",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"noel-lendsqr-be-test",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"v1",
 						"user",
@@ -198,12 +200,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/v1/user/register",
-					"protocol": "http",
+					"raw": "https://noel-lendsqr-be-test.herokuapp.com/v1/user/register",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"noel-lendsqr-be-test",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"v1",
 						"user",
@@ -234,12 +237,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/v1/user/login",
-					"protocol": "http",
+					"raw": "https://noel-lendsqr-be-test.herokuapp.com/v1/user/login",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"noel-lendsqr-be-test",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"v1",
 						"user",
@@ -417,12 +421,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/v1/deposit/init-payment",
-					"protocol": "http",
+					"raw": "https://noel-lendsqr-be-test.herokuapp.com/v1/deposit/init-payment",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"noel-lendsqr-be-test",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"v1",
 						"deposit",
@@ -603,12 +608,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/v1/deposit/webhook",
-					"protocol": "http",
+					"raw": "https://noel-lendsqr-be-test.herokuapp.com/v1/deposit/webhook",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"noel-lendsqr-be-test",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"v1",
 						"deposit",
@@ -787,12 +793,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/v1/profile/transfer-to-beneficiary",
-					"protocol": "http",
+					"raw": "https://noel-lendsqr-be-test.herokuapp.com/v1/profile/transfer-to-beneficiary",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"noel-lendsqr-be-test",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"v1",
 						"profile",
@@ -970,12 +977,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/v1/withdrawal",
-					"protocol": "http",
+					"raw": "https://noel-lendsqr-be-test.herokuapp.com/v1/withdrawal",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"noel-lendsqr-be-test",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"v1",
 						"withdrawal"
@@ -1136,12 +1144,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/v1/profile",
-					"protocol": "http",
+					"raw": "https://noel-lendsqr-be-test.herokuapp.com/v1/profile",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"noel-lendsqr-be-test",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"v1",
 						"profile"
@@ -1300,12 +1309,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/v1/transaction-history",
-					"protocol": "http",
+					"raw": "https://noel-lendsqr-be-test.herokuapp.com/v1/transaction-history",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"noel-lendsqr-be-test",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"v1",
 						"transaction-history"
