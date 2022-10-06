@@ -63,10 +63,15 @@ npm run test
 
 ![E-R Diagram](/ER_diagram.png)
 
+
 # Postman Collection
 
 The postman collectino can be downloaded at ![Postman Collection](/DemoCredit%20LendSQR.postman_collection.json)
 Here's a live documentation link as well: ![Live Postman Documentation](https://documenter.getpostman.com/view/23161852/2s83zdx6qi)
+
+# Code Coverage Report
+
+The code coverage report can be accessed at ![CodeCOV](https://noel-lendsqr-be-test.herokuapp.com/coverage/report/index.html)
 
 
 # Stack
