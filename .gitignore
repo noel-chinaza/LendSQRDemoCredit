@@ -5,5 +5,5 @@ package-lock.json
 
 **/migrations
 
-# don't put dist files on github
+# don't put dist files on github, only put on heroku
 **/dist
