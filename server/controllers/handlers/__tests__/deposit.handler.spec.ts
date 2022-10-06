@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { Account, PaymentGateway, PrismaClient } from "@prisma/client";
+import { Account, Payment, PaymentGateway, PrismaClient, User } from "@prisma/client";
 import {
 	MSG_INSUFFICIENT_AMOUNT_ON_GATEWAY,
 	MSG_NON_EXISTENT_TRANSACTION_REFERENCE,
@@ -9,19 +9,12 @@ import { AuthHandler } from "../auth.handler";
 import { DepositHandler } from "../deposit.handler";
 import { ProfileHandler } from "../profile.handler";
 const prisma = new PrismaClient();
-let user;
-let unimplementedPayment;
-let implementedPayment;
+let user: User;
+let implementedPayment: Payment;
 beforeAll(async () => {
 	user = await AuthHandler.getInstance().registerUser({
 		name: "ama",
 		password: "1luv2play",
-	});
-
-	unimplementedPayment = await DepositHandler.getInstance().initiatePayment({
-		gateway: PaymentGateway.FLUTTERWAVE,
-		user: user,
-		amount: 200,
 	});
 
 	implementedPayment = await DepositHandler.getInstance().initiatePayment({
@@ -33,15 +26,15 @@ beforeAll(async () => {
 
 describe("Deposit System", () => {
 	test("a user is able to initiate a payment", async () => {
-		expect(unimplementedPayment.gateway).toBe(PaymentGateway.FLUTTERWAVE);
-		expect(unimplementedPayment.amount.toNumber()).toEqual(200);
-		expect(unimplementedPayment.userId).toBe(user.id);
+		expect(implementedPayment.gateway).toBe(PaymentGateway.PAYSTACK);
+		expect(implementedPayment.amount.toNumber()).toEqual(200);
+		expect(implementedPayment.userId).toBe(user.id);
 	});
 
 	test("non existing transactions are ignored", async () => {
 		try {
 			await DepositHandler.getInstance().depositMoney({
-				transactionReference: `${unimplementedPayment.transactionReference}-beans`,
+				transactionReference: `${implementedPayment.transactionReference}-beans`,
 				amount: 200,
 			});
 		} catch (e) {
@@ -61,6 +54,13 @@ describe("Deposit System", () => {
 
 	test("unimplemented payment gateways fail successfully", async () => {
 		try {
+
+			const unimplementedPayment = await DepositHandler.getInstance().initiatePayment({
+				gateway: PaymentGateway.FLUTTERWAVE,
+				user: user,
+				amount: 200,
+			});
+			
 			await DepositHandler.getInstance().depositMoney({
 				transactionReference: unimplementedPayment.transactionReference,
 				amount: 200,
