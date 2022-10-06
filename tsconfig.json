@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "es6",
+      "rootDir": "./",
+      "sourceMap": true,
+      "outDir": "dist",
+      "lib": [
+        "esnext"
+      ],
+      "esModuleInterop": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true
+    },
+    "include": ["server/*", "server/config"],
+  }

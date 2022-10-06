@@ -63,6 +63,13 @@ npm run test
 
 ![E-R Diagram](/ER_diagram.png)
 
+# Postman Collection
+
+The postman collectino can be downloaded at ![Postman Collection](/DemoCredit%20LendSQR.postman_collection.json)
+Here's a live documentation link as well: 
+
+
+
 # Stack
 
 The application relies heavily on typescript for fundamental but very necessary checking and analysis; to that effect, the [Prisma ORM](https://www.prisma.io/) was used as opposed to KnexJS

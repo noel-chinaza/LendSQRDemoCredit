@@ -6,7 +6,9 @@
   "scripts": {
     "migrate": "npx prisma migrate dev && npx prisma generate && npx prisma db seed",
     "dev": "nodemon server/bin.ts",
-    "test": "ts-node clean_system.ts && jest"
+    "build": "tsc",
+    "test": "ts-node clean_system.ts && jest",
+    "start": "SESSION_SECRET='qSpk7r34OnnjrrbLulG8Gv5i97q9pDOLUy5NerPwOdeppuwkYH2I1g9ZdJLFa3XoKQIT2aEt56YZxXn4' PRODUCTION='true' node dist/server/bin.js"
   },
   "prisma": {
     "seed": "ts-node prisma/seed/_index.ts"
@@ -15,10 +17,15 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^4.4.0",
+    "cookie-parser": "^1.4.6",
     "crypto": "^1.0.1",
     "express": "^4.18.1",
+    "helmet": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
+    "morgan": "^1.10.0",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
     "ts-node": "^10.9.1",
     "yup": "^0.32.11"
   },
@@ -27,6 +34,7 @@
     "@types/jest": "^29.1.1",
     "@types/lodash": "^4.14.186",
     "jest": "^29.1.2",
+    "nodemon": "^2.0.20",
     "prisma": "^4.4.0",
     "prisma-dbml-generator": "^0.9.1",
     "ts-jest": "^29.0.3"

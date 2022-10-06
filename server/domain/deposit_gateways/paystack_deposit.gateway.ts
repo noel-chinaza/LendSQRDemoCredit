@@ -1,7 +1,9 @@
 import {
 	Payment,
 	PaymentGateway,
-	PrismaClient, User
+	PaymentStatus,
+	PrismaClient,
+	User,
 } from "@prisma/client";
 import { isNil } from "lodash";
 import { Gateway } from ".";
@@ -38,9 +40,19 @@ export class PaystackPaymentGateway implements Gateway {
 
 		// give this user his money
 		await new Transaction()
-		.entry(`user funded his account via ${PaymentGateway.PAYSTACK}`)
+			.entry(`user funded his account via ${PaymentGateway.PAYSTACK}`)
 			.credit(accountToCredit!, payment.amount.toNumber())
 			.debit(accountToDebit!, payment.amount.toNumber())
 			.commit();
+
+			// mark the payment as fulfilled so it can't be reused
+		await prisma.payment.update({
+			where: {
+				id: payment.id,
+			},
+			data: {
+				status: PaymentStatus.FULFILLED,
+			},
+		});
 	}
 }

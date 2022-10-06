@@ -1,6 +1,6 @@
 export function WrapIV2DataWrap(
 	data: any,
-	error: string | undefined | object,
+	error: string | undefined | object ,
 	status: number = ErrorCodes.SUCCESS
 ): V2DataWrap {
 	return {

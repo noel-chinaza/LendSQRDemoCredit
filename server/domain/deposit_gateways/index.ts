@@ -1,4 +1,4 @@
-import { Payment, PaymentGateway, PrismaClient, User } from "@prisma/client";
+import { Payment, PaymentGateway, PaymentStatus, PrismaClient, User } from "@prisma/client";
 import { isNil } from "lodash";
 import { MSG_INSUFFICIENT_AMOUNT_ON_GATEWAY, MSG_NON_EXISTENT_TRANSACTION_REFERENCE, MSG_NO_PAYMENT_GATEWAY_FILFILLER_AVAILABLE } from "../../controllers/messages/deposit.message";
 import { PaystackPaymentGateway } from "./paystack_deposit.gateway";
@@ -12,9 +12,10 @@ export interface Gateway {
 
 export class PaymentGatewayEntrance {
 	public static async paymentReceived(transactionReference: string, amount: number) {
+		// only pending payments can be processed
 		const payment = await prisma.payment.findFirst({
 			include: { user: true },
-			where: { transactionReference },
+			where: { transactionReference , status: PaymentStatus.PENDING},
 		});
 
 		// only fulfill if the amount received is more or equal to the registered amount

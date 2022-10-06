@@ -1,0 +1,1438 @@
+{
+	"info": {
+		"_postman_id": "7d03b4ef-27d7-46e5-8915-dcb7bc8ba959",
+		"name": "DemoCredit LendSQR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23161852"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "ninja",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1luv2play",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "ninja2",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1luv2play",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "115"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"73-8E+xiJkHkxDhksYjJTifRfo4kZA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 01:39:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 111,\n        \"createdAt\": \"2022-10-06T01:39:57.931Z\",\n        \"name\": \"ninja2\",\n        \"userTier\": \"CIVILIAN\"\n    },\n    \"error\": {\n        \"code\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Register Second User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "beemo",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1luv2play",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "ninja",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1luv2play",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "ninja",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1luv2play",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1787"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6fb-uWmRi66bJPyyc6v5n4BHc5WFXQc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 01:39:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"user\": {\n            \"id\": 109,\n            \"createdAt\": \"2022-10-06T00:51:56.947Z\",\n            \"name\": \"ninja\",\n            \"userTier\": \"CIVILIAN\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTA5LCJjcmVhdGVkQXQiOiIyMDIyLTEwLTA2VDAwOjUxOjU2Ljk0N1oiLCJuYW1lIjoibmluamEiLCJoYXNoIjoiMjljZTkyYTJlYmJiYzc5MWU2ZWIyM2MwNmYzODdjMWMzNzUzYTU5Mzk1NzJiMWFhY2E4Y2Y0YzY2N2JkZDFjNzM1YTAyZDFhODE4Mzg2OTE2NzgzOTMyYzVhYWY5OWJjOWI3ZmZjYTZhZTBiYzM4OGNlNTAwNDdlOWQzN2QyOGYxMTBlZGE4MGNhNTNlMjg1YzQ3ZTc3YjY3ZGYyMzIzNDI5ZTg3ZmE0OWQyY2ZiYmRiOGM2MjkwOWQzMmFmOTkxMmQ3YmMyOGViNDM5NGRiYzU0Nzk3NDdhYTIzM2FiOWMwZmVmM2E4YzZiZmNmZGY5ZDUwZDZkOGU3NjBmZDZjMjAwNjEzOWM2ODcwNTNiY2I3NTJkN2I1ZjNiMDExMmRjMDgzZmYxYzJiZGY2MDNkMzRmMjJmNjQ5MzMzYmU3NDAzYzNiM2I4Zjg0YWVkNDI0YTk3MDA1YmJiNGMwNGExNDcxMzcyOTJmNTFhYzk1NjBkODI4OWIwYzc5NDBiNDczZDBjZjdmOTU0NGQzOGNkZjRiYmI5OWViZWEzMmUwNGNmZTc2NWY3Y2M3YzBjOTk2MWJmMzdhM2JkOTk1OTc4NDI5MzYwY2I4MGQxOTVhYWE1OTg1YTg1NjE0MTE0ZjhjMzA3ODgzYjk1NmI5NmZiOWU5ZDZmMWZlZmYzZDY0YWMzOWZhZjc2OTEwODZkZjk1N2RkMDYwYjUyZWQ3NDQ1YTIxMmVlMjExZDdiOGMzNjM3NGYwMjA5ZTNkNDBlM2FkYTdkNTRlMjg5NmQyZjExYTRjNzRiM2Q5Y2I3NzljMmEyYTI0NDQyNTkyMGM1YWQyYWJmMDlhMTNlZmM0MTNjN2Q5OWM3NWY5M2FjMWYzZjdjZGQxNWQ1MWZkODY2Zjc5NTUyZTQxY2I5MjFjZmU3NzU2Y2QwMDBiYzgzODJmOGQxMzQyZjgyZGM5ZWUzYWZlNjVlYTcwMGEwNzc0ODU1Y2EzNGEzZjBkZGVlMDg0YTIwMzE4YWVjMGFlNGNhYTJjMmYyN2IyYTgwN2NkZjM3OWZmOTQwZDgwMDMzMTE2OGYxMTg0M2Q2MTJmYzE0MTlkNTkyMWU3MGRkNTUzM2M4NTEwMmI4ZWViNDdiNzgxYTRmN2NhODQ4OGE5N2E2ODY5ZTQwNjJiM2JlOTAxMjk4MjljOGNmZTU5MTFjNWI4MzRkZWM0YmJhMjFlNmE2MjE2MTQxZmQ1NzdlNzI5NmNlZjVkOGE5YjJlZTRjZGE4ZjUxZDRlNjgzMWYwNDkxMTIwOWVkZTkxNDliY2QxMjllNGVhMGFjMGVhYjQ4MmZiMzhhMjc5NDQ5NmNlYjYzMGYxMTY5ZDY5Yzc1ZGFmYzdmYSIsInNhbHQiOiJhZTUyZWI3OTQ1ZmE3MDI1NWFmMjUzNTk5M2M1NDYxNSIsInVzZXJUaWVyIjoiQ0lWSUxJQU4iLCJpYXQiOjE2NjUwMjAzODF9.2PdaTJXVIpfCKgvAUPyX_hqblSh8fO9MAz2NKmnoEco\"\n    },\n    \"error\": {\n        \"code\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Deposit Money",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTA5LCJjcmVhdGVkQXQiOiIyMDIyLTEwLTA2VDAwOjUxOjU2Ljk0N1oiLCJuYW1lIjoibmluamEiLCJoYXNoIjoiMjljZTkyYTJlYmJiYzc5MWU2ZWIyM2MwNmYzODdjMWMzNzUzYTU5Mzk1NzJiMWFhY2E4Y2Y0YzY2N2JkZDFjNzM1YTAyZDFhODE4Mzg2OTE2NzgzOTMyYzVhYWY5OWJjOWI3ZmZjYTZhZTBiYzM4OGNlNTAwNDdlOWQzN2QyOGYxMTBlZGE4MGNhNTNlMjg1YzQ3ZTc3YjY3ZGYyMzIzNDI5ZTg3ZmE0OWQyY2ZiYmRiOGM2MjkwOWQzMmFmOTkxMmQ3YmMyOGViNDM5NGRiYzU0Nzk3NDdhYTIzM2FiOWMwZmVmM2E4YzZiZmNmZGY5ZDUwZDZkOGU3NjBmZDZjMjAwNjEzOWM2ODcwNTNiY2I3NTJkN2I1ZjNiMDExMmRjMDgzZmYxYzJiZGY2MDNkMzRmMjJmNjQ5MzMzYmU3NDAzYzNiM2I4Zjg0YWVkNDI0YTk3MDA1YmJiNGMwNGExNDcxMzcyOTJmNTFhYzk1NjBkODI4OWIwYzc5NDBiNDczZDBjZjdmOTU0NGQzOGNkZjRiYmI5OWViZWEzMmUwNGNmZTc2NWY3Y2M3YzBjOTk2MWJmMzdhM2JkOTk1OTc4NDI5MzYwY2I4MGQxOTVhYWE1OTg1YTg1NjE0MTE0ZjhjMzA3ODgzYjk1NmI5NmZiOWU5ZDZmMWZlZmYzZDY0YWMzOWZhZjc2OTEwODZkZjk1N2RkMDYwYjUyZWQ3NDQ1YTIxMmVlMjExZDdiOGMzNjM3NGYwMjA5ZTNkNDBlM2FkYTdkNTRlMjg5NmQyZjExYTRjNzRiM2Q5Y2I3NzljMmEyYTI0NDQyNTkyMGM1YWQyYWJmMDlhMTNlZmM0MTNjN2Q5OWM3NWY5M2FjMWYzZjdjZGQxNWQ1MWZkODY2Zjc5NTUyZTQxY2I5MjFjZmU3NzU2Y2QwMDBiYzgzODJmOGQxMzQyZjgyZGM5ZWUzYWZlNjVlYTcwMGEwNzc0ODU1Y2EzNGEzZjBkZGVlMDg0YTIwMzE4YWVjMGFlNGNhYTJjMmYyN2IyYTgwN2NkZjM3OWZmOTQwZDgwMDMzMTE2OGYxMTg0M2Q2MTJmYzE0MTlkNTkyMWU3MGRkNTUzM2M4NTEwMmI4ZWViNDdiNzgxYTRmN2NhODQ4OGE5N2E2ODY5ZTQwNjJiM2JlOTAxMjk4MjljOGNmZTU5MTFjNWI4MzRkZWM0YmJhMjFlNmE2MjE2MTQxZmQ1NzdlNzI5NmNlZjVkOGE5YjJlZTRjZGE4ZjUxZDRlNjgzMWYwNDkxMTIwOWVkZTkxNDliY2QxMjllNGVhMGFjMGVhYjQ4MmZiMzhhMjc5NDQ5NmNlYjYzMGYxMTY5ZDY5Yzc1ZGFmYzdmYSIsInNhbHQiOiJhZTUyZWI3OTQ1ZmE3MDI1NWFmMjUzNTk5M2M1NDYxNSIsInVzZXJUaWVyIjoiQ0lWSUxJQU4iLCJpYXQiOjE2NjUwMTc2NjZ9.VjNgU5BLIkrHT3dmWOvMyI9PwedbRmp2PyanLW7g7jc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "amount",
+							"value": "100",
+							"description": "must be more than 100",
+							"type": "text"
+						},
+						{
+							"key": "gateway",
+							"value": "PAYSTACK",
+							"description": "PAYSTACK or FLUTTERWAVE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/deposit/init-payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"deposit",
+						"init-payment"
+					]
+				},
+				"description": "the user wishes to deposit money and should be given a payment reference to complete on any available providers"
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "100",
+									"description": "must be more than 100",
+									"type": "text"
+								},
+								{
+									"key": "gateway",
+									"value": "PAYSTACK",
+									"description": "PAYSTACK or FLUTTERWAVE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/deposit/init-payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"deposit",
+								"init-payment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "168"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a8-CDrNWsvK3plw2GKz7pJFzWYSNVQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 01:39:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"payment\": {\n            \"id\": 65,\n            \"transactionReference\": \"cl8we4iiq0001v31k6fnoh72p\",\n            \"amount\": \"100\",\n            \"gateway\": \"PAYSTACK\",\n            \"status\": \"PENDING\",\n            \"userId\": 109\n        }\n    },\n    \"error\": {\n        \"code\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Complete Deposit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTA5LCJjcmVhdGVkQXQiOiIyMDIyLTEwLTA2VDAwOjUxOjU2Ljk0N1oiLCJuYW1lIjoibmluamEiLCJoYXNoIjoiMjljZTkyYTJlYmJiYzc5MWU2ZWIyM2MwNmYzODdjMWMzNzUzYTU5Mzk1NzJiMWFhY2E4Y2Y0YzY2N2JkZDFjNzM1YTAyZDFhODE4Mzg2OTE2NzgzOTMyYzVhYWY5OWJjOWI3ZmZjYTZhZTBiYzM4OGNlNTAwNDdlOWQzN2QyOGYxMTBlZGE4MGNhNTNlMjg1YzQ3ZTc3YjY3ZGYyMzIzNDI5ZTg3ZmE0OWQyY2ZiYmRiOGM2MjkwOWQzMmFmOTkxMmQ3YmMyOGViNDM5NGRiYzU0Nzk3NDdhYTIzM2FiOWMwZmVmM2E4YzZiZmNmZGY5ZDUwZDZkOGU3NjBmZDZjMjAwNjEzOWM2ODcwNTNiY2I3NTJkN2I1ZjNiMDExMmRjMDgzZmYxYzJiZGY2MDNkMzRmMjJmNjQ5MzMzYmU3NDAzYzNiM2I4Zjg0YWVkNDI0YTk3MDA1YmJiNGMwNGExNDcxMzcyOTJmNTFhYzk1NjBkODI4OWIwYzc5NDBiNDczZDBjZjdmOTU0NGQzOGNkZjRiYmI5OWViZWEzMmUwNGNmZTc2NWY3Y2M3YzBjOTk2MWJmMzdhM2JkOTk1OTc4NDI5MzYwY2I4MGQxOTVhYWE1OTg1YTg1NjE0MTE0ZjhjMzA3ODgzYjk1NmI5NmZiOWU5ZDZmMWZlZmYzZDY0YWMzOWZhZjc2OTEwODZkZjk1N2RkMDYwYjUyZWQ3NDQ1YTIxMmVlMjExZDdiOGMzNjM3NGYwMjA5ZTNkNDBlM2FkYTdkNTRlMjg5NmQyZjExYTRjNzRiM2Q5Y2I3NzljMmEyYTI0NDQyNTkyMGM1YWQyYWJmMDlhMTNlZmM0MTNjN2Q5OWM3NWY5M2FjMWYzZjdjZGQxNWQ1MWZkODY2Zjc5NTUyZTQxY2I5MjFjZmU3NzU2Y2QwMDBiYzgzODJmOGQxMzQyZjgyZGM5ZWUzYWZlNjVlYTcwMGEwNzc0ODU1Y2EzNGEzZjBkZGVlMDg0YTIwMzE4YWVjMGFlNGNhYTJjMmYyN2IyYTgwN2NkZjM3OWZmOTQwZDgwMDMzMTE2OGYxMTg0M2Q2MTJmYzE0MTlkNTkyMWU3MGRkNTUzM2M4NTEwMmI4ZWViNDdiNzgxYTRmN2NhODQ4OGE5N2E2ODY5ZTQwNjJiM2JlOTAxMjk4MjljOGNmZTU5MTFjNWI4MzRkZWM0YmJhMjFlNmE2MjE2MTQxZmQ1NzdlNzI5NmNlZjVkOGE5YjJlZTRjZGE4ZjUxZDRlNjgzMWYwNDkxMTIwOWVkZTkxNDliY2QxMjllNGVhMGFjMGVhYjQ4MmZiMzhhMjc5NDQ5NmNlYjYzMGYxMTY5ZDY5Yzc1ZGFmYzdmYSIsInNhbHQiOiJhZTUyZWI3OTQ1ZmE3MDI1NWFmMjUzNTk5M2M1NDYxNSIsInVzZXJUaWVyIjoiQ0lWSUxJQU4iLCJpYXQiOjE2NjUwMTc2NjZ9.VjNgU5BLIkrHT3dmWOvMyI9PwedbRmp2PyanLW7g7jc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "transactionReference",
+							"value": "cl8we4iiq0001v31k6fnoh72p",
+							"description": "the transaction reference you were provided when you did [Deposit Money]",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "100",
+							"description": "a typical payment gateway also provides the amount that was given",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/deposit/webhook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"deposit",
+						"webhook"
+					]
+				},
+				"description": "the payment gateway will call this webhook upon confirmation of payment to fulfill the payment"
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "transactionReference",
+									"value": "cl8we4iiq0001v31k6fnoh72p",
+									"description": "the transaction reference you were provided when you did [Deposit Money]",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "100",
+									"description": "a typical payment gateway also provides the amount that was given",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/deposit/webhook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"deposit",
+								"webhook"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "180"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b4-3kFuDEE0XyXkiMZzDf8UQaqHuro\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 01:39:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"message\": \"your deposit was successful\",\n        \"user\": {\n            \"name\": \"ninja\",\n            \"id\": 109,\n            \"accounts\": [\n                {\n                    \"id\": 112,\n                    \"balance\": \"100\",\n                    \"userId\": 109,\n                    \"tag\": \"USER_ACCOUNT:109\"\n                }\n            ]\n        }\n    },\n    \"error\": {\n        \"code\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Transfer Money",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTA5LCJjcmVhdGVkQXQiOiIyMDIyLTEwLTA2VDAwOjUxOjU2Ljk0N1oiLCJuYW1lIjoibmluamEiLCJoYXNoIjoiMjljZTkyYTJlYmJiYzc5MWU2ZWIyM2MwNmYzODdjMWMzNzUzYTU5Mzk1NzJiMWFhY2E4Y2Y0YzY2N2JkZDFjNzM1YTAyZDFhODE4Mzg2OTE2NzgzOTMyYzVhYWY5OWJjOWI3ZmZjYTZhZTBiYzM4OGNlNTAwNDdlOWQzN2QyOGYxMTBlZGE4MGNhNTNlMjg1YzQ3ZTc3YjY3ZGYyMzIzNDI5ZTg3ZmE0OWQyY2ZiYmRiOGM2MjkwOWQzMmFmOTkxMmQ3YmMyOGViNDM5NGRiYzU0Nzk3NDdhYTIzM2FiOWMwZmVmM2E4YzZiZmNmZGY5ZDUwZDZkOGU3NjBmZDZjMjAwNjEzOWM2ODcwNTNiY2I3NTJkN2I1ZjNiMDExMmRjMDgzZmYxYzJiZGY2MDNkMzRmMjJmNjQ5MzMzYmU3NDAzYzNiM2I4Zjg0YWVkNDI0YTk3MDA1YmJiNGMwNGExNDcxMzcyOTJmNTFhYzk1NjBkODI4OWIwYzc5NDBiNDczZDBjZjdmOTU0NGQzOGNkZjRiYmI5OWViZWEzMmUwNGNmZTc2NWY3Y2M3YzBjOTk2MWJmMzdhM2JkOTk1OTc4NDI5MzYwY2I4MGQxOTVhYWE1OTg1YTg1NjE0MTE0ZjhjMzA3ODgzYjk1NmI5NmZiOWU5ZDZmMWZlZmYzZDY0YWMzOWZhZjc2OTEwODZkZjk1N2RkMDYwYjUyZWQ3NDQ1YTIxMmVlMjExZDdiOGMzNjM3NGYwMjA5ZTNkNDBlM2FkYTdkNTRlMjg5NmQyZjExYTRjNzRiM2Q5Y2I3NzljMmEyYTI0NDQyNTkyMGM1YWQyYWJmMDlhMTNlZmM0MTNjN2Q5OWM3NWY5M2FjMWYzZjdjZGQxNWQ1MWZkODY2Zjc5NTUyZTQxY2I5MjFjZmU3NzU2Y2QwMDBiYzgzODJmOGQxMzQyZjgyZGM5ZWUzYWZlNjVlYTcwMGEwNzc0ODU1Y2EzNGEzZjBkZGVlMDg0YTIwMzE4YWVjMGFlNGNhYTJjMmYyN2IyYTgwN2NkZjM3OWZmOTQwZDgwMDMzMTE2OGYxMTg0M2Q2MTJmYzE0MTlkNTkyMWU3MGRkNTUzM2M4NTEwMmI4ZWViNDdiNzgxYTRmN2NhODQ4OGE5N2E2ODY5ZTQwNjJiM2JlOTAxMjk4MjljOGNmZTU5MTFjNWI4MzRkZWM0YmJhMjFlNmE2MjE2MTQxZmQ1NzdlNzI5NmNlZjVkOGE5YjJlZTRjZGE4ZjUxZDRlNjgzMWYwNDkxMTIwOWVkZTkxNDliY2QxMjllNGVhMGFjMGVhYjQ4MmZiMzhhMjc5NDQ5NmNlYjYzMGYxMTY5ZDY5Yzc1ZGFmYzdmYSIsInNhbHQiOiJhZTUyZWI3OTQ1ZmE3MDI1NWFmMjUzNTk5M2M1NDYxNSIsInVzZXJUaWVyIjoiQ0lWSUxJQU4iLCJpYXQiOjE2NjUwMTc2NjZ9.VjNgU5BLIkrHT3dmWOvMyI9PwedbRmp2PyanLW7g7jc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "destinationUserTag",
+							"value": "beemo",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/profile/transfer-to-beneficiary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"profile",
+						"transfer-to-beneficiary"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "destinationUserTag",
+									"value": "beemo",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/profile/transfer-to-beneficiary",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"profile",
+								"transfer-to-beneficiary"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f2-8h6OIbmRn7OYyn3Ar45bJvy8rvI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 01:30:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"message\": \"your transfer was successful\",\n        \"user\": {\n            \"id\": 109,\n            \"createdAt\": \"2022-10-06T00:51:56.947Z\",\n            \"name\": \"ninja\",\n            \"userTier\": \"CIVILIAN\",\n            \"accounts\": [\n                {\n                    \"id\": 112,\n                    \"balance\": \"100\",\n                    \"userId\": 109,\n                    \"tag\": \"USER_ACCOUNT:109\"\n                }\n            ]\n        }\n    },\n    \"error\": {\n        \"code\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Withdraw Money",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTA5LCJjcmVhdGVkQXQiOiIyMDIyLTEwLTA2VDAwOjUxOjU2Ljk0N1oiLCJuYW1lIjoibmluamEiLCJoYXNoIjoiMjljZTkyYTJlYmJiYzc5MWU2ZWIyM2MwNmYzODdjMWMzNzUzYTU5Mzk1NzJiMWFhY2E4Y2Y0YzY2N2JkZDFjNzM1YTAyZDFhODE4Mzg2OTE2NzgzOTMyYzVhYWY5OWJjOWI3ZmZjYTZhZTBiYzM4OGNlNTAwNDdlOWQzN2QyOGYxMTBlZGE4MGNhNTNlMjg1YzQ3ZTc3YjY3ZGYyMzIzNDI5ZTg3ZmE0OWQyY2ZiYmRiOGM2MjkwOWQzMmFmOTkxMmQ3YmMyOGViNDM5NGRiYzU0Nzk3NDdhYTIzM2FiOWMwZmVmM2E4YzZiZmNmZGY5ZDUwZDZkOGU3NjBmZDZjMjAwNjEzOWM2ODcwNTNiY2I3NTJkN2I1ZjNiMDExMmRjMDgzZmYxYzJiZGY2MDNkMzRmMjJmNjQ5MzMzYmU3NDAzYzNiM2I4Zjg0YWVkNDI0YTk3MDA1YmJiNGMwNGExNDcxMzcyOTJmNTFhYzk1NjBkODI4OWIwYzc5NDBiNDczZDBjZjdmOTU0NGQzOGNkZjRiYmI5OWViZWEzMmUwNGNmZTc2NWY3Y2M3YzBjOTk2MWJmMzdhM2JkOTk1OTc4NDI5MzYwY2I4MGQxOTVhYWE1OTg1YTg1NjE0MTE0ZjhjMzA3ODgzYjk1NmI5NmZiOWU5ZDZmMWZlZmYzZDY0YWMzOWZhZjc2OTEwODZkZjk1N2RkMDYwYjUyZWQ3NDQ1YTIxMmVlMjExZDdiOGMzNjM3NGYwMjA5ZTNkNDBlM2FkYTdkNTRlMjg5NmQyZjExYTRjNzRiM2Q5Y2I3NzljMmEyYTI0NDQyNTkyMGM1YWQyYWJmMDlhMTNlZmM0MTNjN2Q5OWM3NWY5M2FjMWYzZjdjZGQxNWQ1MWZkODY2Zjc5NTUyZTQxY2I5MjFjZmU3NzU2Y2QwMDBiYzgzODJmOGQxMzQyZjgyZGM5ZWUzYWZlNjVlYTcwMGEwNzc0ODU1Y2EzNGEzZjBkZGVlMDg0YTIwMzE4YWVjMGFlNGNhYTJjMmYyN2IyYTgwN2NkZjM3OWZmOTQwZDgwMDMzMTE2OGYxMTg0M2Q2MTJmYzE0MTlkNTkyMWU3MGRkNTUzM2M4NTEwMmI4ZWViNDdiNzgxYTRmN2NhODQ4OGE5N2E2ODY5ZTQwNjJiM2JlOTAxMjk4MjljOGNmZTU5MTFjNWI4MzRkZWM0YmJhMjFlNmE2MjE2MTQxZmQ1NzdlNzI5NmNlZjVkOGE5YjJlZTRjZGE4ZjUxZDRlNjgzMWYwNDkxMTIwOWVkZTkxNDliY2QxMjllNGVhMGFjMGVhYjQ4MmZiMzhhMjc5NDQ5NmNlYjYzMGYxMTY5ZDY5Yzc1ZGFmYzdmYSIsInNhbHQiOiJhZTUyZWI3OTQ1ZmE3MDI1NWFmMjUzNTk5M2M1NDYxNSIsInVzZXJUaWVyIjoiQ0lWSUxJQU4iLCJpYXQiOjE2NjUwMTc2NjZ9.VjNgU5BLIkrHT3dmWOvMyI9PwedbRmp2PyanLW7g7jc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "amount",
+							"value": "100",
+							"description": "min is 100",
+							"type": "text"
+						},
+						{
+							"key": "gateway",
+							"value": "BANK",
+							"description": "BANK or CRYPTO",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/withdrawal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"withdrawal"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "100",
+									"description": "min is 100",
+									"type": "text"
+								},
+								{
+									"key": "gateway",
+									"value": "BANK",
+									"description": "BANK or CRYPTO",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/withdrawal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"withdrawal"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f2-Y/DncXFnhij0zAVXZgly8ujJ+Cs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 01:31:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"message\": \"your withdrawal was successful\",\n        \"user\": {\n            \"id\": 109,\n            \"createdAt\": \"2022-10-06T00:51:56.947Z\",\n            \"name\": \"ninja\",\n            \"userTier\": \"CIVILIAN\",\n            \"accounts\": [\n                {\n                    \"id\": 112,\n                    \"balance\": \"0\",\n                    \"userId\": 109,\n                    \"tag\": \"USER_ACCOUNT:109\"\n                }\n            ]\n        }\n    },\n    \"error\": {\n        \"code\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Wallet Information",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTA5LCJjcmVhdGVkQXQiOiIyMDIyLTEwLTA2VDAwOjUxOjU2Ljk0N1oiLCJuYW1lIjoibmluamEiLCJoYXNoIjoiMjljZTkyYTJlYmJiYzc5MWU2ZWIyM2MwNmYzODdjMWMzNzUzYTU5Mzk1NzJiMWFhY2E4Y2Y0YzY2N2JkZDFjNzM1YTAyZDFhODE4Mzg2OTE2NzgzOTMyYzVhYWY5OWJjOWI3ZmZjYTZhZTBiYzM4OGNlNTAwNDdlOWQzN2QyOGYxMTBlZGE4MGNhNTNlMjg1YzQ3ZTc3YjY3ZGYyMzIzNDI5ZTg3ZmE0OWQyY2ZiYmRiOGM2MjkwOWQzMmFmOTkxMmQ3YmMyOGViNDM5NGRiYzU0Nzk3NDdhYTIzM2FiOWMwZmVmM2E4YzZiZmNmZGY5ZDUwZDZkOGU3NjBmZDZjMjAwNjEzOWM2ODcwNTNiY2I3NTJkN2I1ZjNiMDExMmRjMDgzZmYxYzJiZGY2MDNkMzRmMjJmNjQ5MzMzYmU3NDAzYzNiM2I4Zjg0YWVkNDI0YTk3MDA1YmJiNGMwNGExNDcxMzcyOTJmNTFhYzk1NjBkODI4OWIwYzc5NDBiNDczZDBjZjdmOTU0NGQzOGNkZjRiYmI5OWViZWEzMmUwNGNmZTc2NWY3Y2M3YzBjOTk2MWJmMzdhM2JkOTk1OTc4NDI5MzYwY2I4MGQxOTVhYWE1OTg1YTg1NjE0MTE0ZjhjMzA3ODgzYjk1NmI5NmZiOWU5ZDZmMWZlZmYzZDY0YWMzOWZhZjc2OTEwODZkZjk1N2RkMDYwYjUyZWQ3NDQ1YTIxMmVlMjExZDdiOGMzNjM3NGYwMjA5ZTNkNDBlM2FkYTdkNTRlMjg5NmQyZjExYTRjNzRiM2Q5Y2I3NzljMmEyYTI0NDQyNTkyMGM1YWQyYWJmMDlhMTNlZmM0MTNjN2Q5OWM3NWY5M2FjMWYzZjdjZGQxNWQ1MWZkODY2Zjc5NTUyZTQxY2I5MjFjZmU3NzU2Y2QwMDBiYzgzODJmOGQxMzQyZjgyZGM5ZWUzYWZlNjVlYTcwMGEwNzc0ODU1Y2EzNGEzZjBkZGVlMDg0YTIwMzE4YWVjMGFlNGNhYTJjMmYyN2IyYTgwN2NkZjM3OWZmOTQwZDgwMDMzMTE2OGYxMTg0M2Q2MTJmYzE0MTlkNTkyMWU3MGRkNTUzM2M4NTEwMmI4ZWViNDdiNzgxYTRmN2NhODQ4OGE5N2E2ODY5ZTQwNjJiM2JlOTAxMjk4MjljOGNmZTU5MTFjNWI4MzRkZWM0YmJhMjFlNmE2MjE2MTQxZmQ1NzdlNzI5NmNlZjVkOGE5YjJlZTRjZGE4ZjUxZDRlNjgzMWYwNDkxMTIwOWVkZTkxNDliY2QxMjllNGVhMGFjMGVhYjQ4MmZiMzhhMjc5NDQ5NmNlYjYzMGYxMTY5ZDY5Yzc1ZGFmYzdmYSIsInNhbHQiOiJhZTUyZWI3OTQ1ZmE3MDI1NWFmMjUzNTk5M2M1NDYxNSIsInVzZXJUaWVyIjoiQ0lWSUxJQU4iLCJpYXQiOjE2NjUwMTc2NjZ9.VjNgU5BLIkrHT3dmWOvMyI9PwedbRmp2PyanLW7g7jc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "ninja",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1luv2play",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c7-jo0R/jlOAr0dtWbEAJEus7ktxAw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 01:38:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"user\": {\n            \"id\": 109,\n            \"createdAt\": \"2022-10-06T00:51:56.947Z\",\n            \"name\": \"ninja\",\n            \"userTier\": \"CIVILIAN\",\n            \"accounts\": [\n                {\n                    \"id\": 112,\n                    \"balance\": \"0\",\n                    \"userId\": 109,\n                    \"tag\": \"USER_ACCOUNT:109\"\n                }\n            ]\n        }\n    },\n    \"error\": {\n        \"code\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Transaction History",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTA5LCJjcmVhdGVkQXQiOiIyMDIyLTEwLTA2VDAwOjUxOjU2Ljk0N1oiLCJuYW1lIjoibmluamEiLCJoYXNoIjoiMjljZTkyYTJlYmJiYzc5MWU2ZWIyM2MwNmYzODdjMWMzNzUzYTU5Mzk1NzJiMWFhY2E4Y2Y0YzY2N2JkZDFjNzM1YTAyZDFhODE4Mzg2OTE2NzgzOTMyYzVhYWY5OWJjOWI3ZmZjYTZhZTBiYzM4OGNlNTAwNDdlOWQzN2QyOGYxMTBlZGE4MGNhNTNlMjg1YzQ3ZTc3YjY3ZGYyMzIzNDI5ZTg3ZmE0OWQyY2ZiYmRiOGM2MjkwOWQzMmFmOTkxMmQ3YmMyOGViNDM5NGRiYzU0Nzk3NDdhYTIzM2FiOWMwZmVmM2E4YzZiZmNmZGY5ZDUwZDZkOGU3NjBmZDZjMjAwNjEzOWM2ODcwNTNiY2I3NTJkN2I1ZjNiMDExMmRjMDgzZmYxYzJiZGY2MDNkMzRmMjJmNjQ5MzMzYmU3NDAzYzNiM2I4Zjg0YWVkNDI0YTk3MDA1YmJiNGMwNGExNDcxMzcyOTJmNTFhYzk1NjBkODI4OWIwYzc5NDBiNDczZDBjZjdmOTU0NGQzOGNkZjRiYmI5OWViZWEzMmUwNGNmZTc2NWY3Y2M3YzBjOTk2MWJmMzdhM2JkOTk1OTc4NDI5MzYwY2I4MGQxOTVhYWE1OTg1YTg1NjE0MTE0ZjhjMzA3ODgzYjk1NmI5NmZiOWU5ZDZmMWZlZmYzZDY0YWMzOWZhZjc2OTEwODZkZjk1N2RkMDYwYjUyZWQ3NDQ1YTIxMmVlMjExZDdiOGMzNjM3NGYwMjA5ZTNkNDBlM2FkYTdkNTRlMjg5NmQyZjExYTRjNzRiM2Q5Y2I3NzljMmEyYTI0NDQyNTkyMGM1YWQyYWJmMDlhMTNlZmM0MTNjN2Q5OWM3NWY5M2FjMWYzZjdjZGQxNWQ1MWZkODY2Zjc5NTUyZTQxY2I5MjFjZmU3NzU2Y2QwMDBiYzgzODJmOGQxMzQyZjgyZGM5ZWUzYWZlNjVlYTcwMGEwNzc0ODU1Y2EzNGEzZjBkZGVlMDg0YTIwMzE4YWVjMGFlNGNhYTJjMmYyN2IyYTgwN2NkZjM3OWZmOTQwZDgwMDMzMTE2OGYxMTg0M2Q2MTJmYzE0MTlkNTkyMWU3MGRkNTUzM2M4NTEwMmI4ZWViNDdiNzgxYTRmN2NhODQ4OGE5N2E2ODY5ZTQwNjJiM2JlOTAxMjk4MjljOGNmZTU5MTFjNWI4MzRkZWM0YmJhMjFlNmE2MjE2MTQxZmQ1NzdlNzI5NmNlZjVkOGE5YjJlZTRjZGE4ZjUxZDRlNjgzMWYwNDkxMTIwOWVkZTkxNDliY2QxMjllNGVhMGFjMGVhYjQ4MmZiMzhhMjc5NDQ5NmNlYjYzMGYxMTY5ZDY5Yzc1ZGFmYzdmYSIsInNhbHQiOiJhZTUyZWI3OTQ1ZmE3MDI1NWFmMjUzNTk5M2M1NDYxNSIsInVzZXJUaWVyIjoiQ0lWSUxJQU4iLCJpYXQiOjE2NjUwMTc2NjZ9.VjNgU5BLIkrHT3dmWOvMyI9PwedbRmp2PyanLW7g7jc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/transaction-history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"transaction-history"
+					]
+				},
+				"description": "This endpoint shows the users past transaction history"
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/transaction-history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"transaction-history"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "892"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"37c-71UM7atgXXIwDd388hy7sjgCRLs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 01:36:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"transactions\": [\n            {\n                \"id\": 79,\n                \"description\": \"user funded his account via PAYSTACK\",\n                \"debitAmount\": \"0\",\n                \"creditAmount\": \"100\",\n                \"debitAccountID\": null,\n                \"creditAccountID\": 112\n            },\n            {\n                \"id\": 81,\n                \"description\": \"user funded his account via PAYSTACK\",\n                \"debitAmount\": \"0\",\n                \"creditAmount\": \"100\",\n                \"debitAccountID\": null,\n                \"creditAccountID\": 112\n            },\n            {\n                \"id\": 83,\n                \"description\": \"user funded his account via PAYSTACK\",\n                \"debitAmount\": \"0\",\n                \"creditAmount\": \"100\",\n                \"debitAccountID\": null,\n                \"creditAccountID\": 112\n            },\n            {\n                \"id\": 86,\n                \"description\": \"ninja sent 100 to beemo\",\n                \"debitAmount\": \"100\",\n                \"creditAmount\": \"0\",\n                \"debitAccountID\": 112,\n                \"creditAccountID\": null\n            },\n            {\n                \"id\": 88,\n                \"description\": \"ninja sent 100 to beemo\",\n                \"debitAmount\": \"100\",\n                \"creditAmount\": \"0\",\n                \"debitAccountID\": 112,\n                \"creditAccountID\": null\n            },\n            {\n                \"id\": 90,\n                \"description\": \"user withdrew his money via BANK\",\n                \"debitAmount\": \"100\",\n                \"creditAmount\": \"0\",\n                \"debitAccountID\": 112,\n                \"creditAccountID\": null\n            }\n        ]\n    },\n    \"error\": {\n        \"code\": 0\n    }\n}"
+				}
+			]
+		}
+	]
+}

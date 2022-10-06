@@ -2,7 +2,7 @@ import { RequestHandler, Request } from "express";
 import { AnySchema } from "yup";
 import { WrapIV2DataWrap, ErrorCodes } from "..";
 
-export var GenericChecker = function (
+export function GenericChecker(
 	schema,
 	getObj: (req: Request) => any,
 	setObj: (req: Request, obj: any) => void
@@ -18,7 +18,7 @@ export var GenericChecker = function (
 			res.status(422).send(WrapIV2DataWrap(null, err, ErrorCodes.ERROR));
 		}
 	};
-};
+}
 
 export async function GenericCheckerInternal(schema: AnySchema, obj) {
 	obj = schema.cast(obj, { stripUnknown: false });
