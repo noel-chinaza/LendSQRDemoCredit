@@ -34,6 +34,7 @@ The system is organized into layers that are only responsible for the intended f
 |
 ├──── server/ 
 |     ├──── config/ : holds configurations for system variables
+|     ├──── ui/ : holds interfaces for the applications needs such as a paywalls
 |     |     
 |     ├──── domain/
 |     |     ├──── bin.ts: main entry point for the express server powering the application
