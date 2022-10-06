@@ -3,8 +3,6 @@ node_modules
 .env
 package-lock.json
 
-**/migrations
-
 # don't put dist files on github, only put on heroku
 **/dist
 # **/coverage
