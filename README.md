@@ -12,6 +12,11 @@ The MVP solution must account for the following features:
 # Implementation Summary
 This project utilizes and implements a traditional accounting system. The cardinal rule of double-entry accounting is that "for every debit entry, there must be a corresponding credit entry" which means "everything must balance out to zero", and that rule is applied to every transaction written to the system.
 
+Typically every user regarded as a CIVILIAN in the system has only one account, the only account capapble of having more than one account is the SYSTEM0 user, neccessary to create virtual accounts for:
+
+* Withdrawals as this is how money leaves or "vanishes" from the application
+* Deposits as this is how money enters or "appears" in the application
+
 The project is built with heavy reliance on OOP and creates:
 
 * Abstractions to hide the complexity of the credit-debit system
