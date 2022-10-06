@@ -8,9 +8,20 @@ const prisma = new PrismaClient();
 // typically every payment gateway will have different protocols to fulfill payments
 export interface Gateway {
 	 fulfillTransaction(payment: Payment & { user: User })
+	 initializePaymentOnProvider(payment: Payment)	 
+
 }
 
 export class PaymentGatewayEntrance {
+	public static async initiatePaymentInitialization(payment: Payment & {user: {name: string}}) {
+		switch(payment.gateway) {
+			case PaymentGateway.PAYSTACK:
+				return await PaystackPaymentGateway.getInstance().initializePaymentOnProvider(payment);
+				default:
+					throw MSG_NO_PAYMENT_GATEWAY_FILFILLER_AVAILABLE;
+
+		}
+	}
 	public static async paymentReceived(transactionReference: string, amount: number) {
 		// only pending payments can be processed
 		const payment = await prisma.payment.findFirst({

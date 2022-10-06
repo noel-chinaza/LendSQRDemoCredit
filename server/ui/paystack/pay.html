@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Paystack Payment</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    if (params.public_key && params.public_key.length > 0 && params.transaction_reference && params.transaction_reference.length > 0 && params.email && params.email.length > 0&& params.amount && params.amount > 0) {
+        function payWithPaystack() {
+            let handler = PaystackPop.setup({
+                key: params.public_key,
+                ref: params.transaction_reference,
+                email: params.email,
+                amount: params.amount,
+                onClose: function () {
+                    alert('Window closed.');
+                },
+                callback: function (response) {
+                    let message = 'Payment complete! Reference: ' + response.reference;
+                    alert(message);
+                }
+            });
+
+            handler.openIframe();
+        }
+        payWithPaystack();
+    }
+</script>
+
+</html>

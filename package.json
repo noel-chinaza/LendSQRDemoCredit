@@ -6,9 +6,9 @@
   "scripts": {
     "migrate": "npx prisma migrate dev && npx prisma generate && npx prisma db seed",
     "dev": "nodemon server/bin.ts",
-    "build": "tsc && cp -R ./coverage ./dist/server/coverage",
+    "build": "tsc && cp -R ./coverage ./dist/server/coverage && mv ./dist/server/coverage/Icov-report ./dist/server/coverage/report",
     "test": "ts-node clean_system.ts && jest",
-    "start": "SESSION_SECRET='qSpk7r34OnnjrrbLulG8Gv5i97q9pDOLUy5NerPwOdeppuwkYH2I1g9ZdJLFa3XoKQIT2aEt56YZxXn4' PRODUCTION='true' node dist/server/bin.js"
+    "start": "SESSION_SECRET='qSpk7r34OnnjrrbLulG8Gv5i97q9pDOLUy5NerPwOdeppuwkYH2I1g9ZdJLFa3XoKQIT2aEt56YZxXn4' PRODUCTION='true' PAYSTACK_SECRET='sk_test_540bde69939a70fb30cb0b3411e3fc9649ddda01' PAYSTACK_PUBLIC='pk_test_5926c00051929becf04fe835437d939242334356' node dist/server/bin.js"
   },
   "prisma": {
     "seed": "ts-node prisma/seed/_index.ts"
@@ -21,7 +21,6 @@
     "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
-    "helmet": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",

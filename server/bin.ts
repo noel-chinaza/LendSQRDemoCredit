@@ -3,7 +3,6 @@ require("dotenv").config();
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import express from "express";
-import helmet from "helmet";
 import { createServer } from "http";
 
 import { PrismaClient } from "@prisma/client";
@@ -19,7 +18,6 @@ const app = express();
 
 const server = createServer(app);
 
-app.use(helmet());
 app.use(require("morgan")("dev"));
 // store and read cookies
 app.use(cookieParser());
@@ -31,7 +29,6 @@ app.use(function (req, res, next) {
 	res.header("Access-Control-Allow-Methods", "GET");
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Credentials", "true");
-	// res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
 	res.header("Access-Control-Allow-Headers", "*");
 	next();
 });
@@ -53,13 +50,12 @@ if (process.env["PRODUCTION"] != "true") {
 	});
 }
 
-
 require("./config/passport");
 
-app.use("/v1/",AuthRouter);
-app.use("/v1/",ProfileRouter);
-app.use("/v1/",DepositRouter);
-app.use("/v1/",WithdrawalRouter);
+app.use("/v1/", AuthRouter);
+app.use("/v1/", ProfileRouter);
+app.use("/v1/", DepositRouter);
+app.use("/v1/", WithdrawalRouter);
 
 app.get("/", async function (req, res, next) {
 	res.send({
@@ -69,6 +65,7 @@ app.get("/", async function (req, res, next) {
 });
 
 app.use("/coverage", express.static(path.join(__dirname, "/coverage")));
+app.use("/ui", express.static(path.join(__dirname, "/ui")));
 
 server.listen(process.env["PORT"], () => {
 	console.log(`Listening on port ${process.env["PORT"]}`);

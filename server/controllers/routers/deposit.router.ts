@@ -10,6 +10,7 @@ import {
 	INITIATE_PAYMENT_VALIDATOR_BODY,
 } from "../validators/deposit.validator";
 import passport from "passport";
+import { createHmac } from "crypto";
 
 const prisma = new PrismaClient();
 
@@ -30,11 +31,7 @@ router.post(
 				user: (req as any).user,
 			});
 			res.send(
-				WrapIV2DataWrap(
-					{ payment },
-					undefined,
-					ErrorCodes.SUCCESS
-				)
+				WrapIV2DataWrap({ payment }, undefined, ErrorCodes.SUCCESS)
 			);
 		} catch (err) {
 			console.error(err);
@@ -85,5 +82,24 @@ router.post(
 		}
 	}
 );
+
+
+router.post("/deposit/paystack-webhook", async function (req, res, next) {
+	//validate event
+	const hash = createHmac("sha512", process.env["PAYSTACK_SECRET"])
+		.update(JSON.stringify(req.body))
+		.digest("hex");
+
+	if (hash == req.headers["x-paystack-signature"]) {
+		// Retrieve the request's body
+		const {data} = req.body;
+		await DepositHandler.getInstance().depositMoney({
+			amount: Number(data.amount)/100,
+			transactionReference: data.reference
+		});
+		// Do something with event
+	}
+	res.send(200);
+});
 
 export { router as DepositRouter };

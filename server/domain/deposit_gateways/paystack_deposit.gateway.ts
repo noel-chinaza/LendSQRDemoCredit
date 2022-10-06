@@ -14,6 +14,20 @@ const prisma = new PrismaClient();
 export class PaystackPaymentGateway implements Gateway {
 	constructor() {}
 
+	async initializePaymentOnProvider(
+		payment: Payment & {user: {name: string}}
+	): Promise<string> {
+		const userEmail : string = `${payment.user.name}@noel-lendsqr-be-test.herokuapp.com`;
+		const amount: number = payment.amount.toNumber()*100;
+		const {transactionReference} = payment;
+		const publicKey = process.env["PAYSTACK_PUBLIC"];
+		
+		if (process.env["PRODUCTION"] == "true")
+			return `https://noel-lendsqr-be-test.herokuapp.com/ui/paystack/pay.html?amount=${amount}&email=${userEmail}&transaction_reference=${transactionReference}&public_key=${publicKey}`;
+		else
+			return `https://ec58csmacbookpro.local/ui/paystack/pay.html?amount=${amount}&email=${userEmail}&transaction_reference=${transactionReference}&public_key=${publicKey}`;
+	}
+
 	// singleton design for creating paystack gateways
 	private static paystackGatewayInstance: PaystackPaymentGateway;
 	static getInstance() {
@@ -45,7 +59,7 @@ export class PaystackPaymentGateway implements Gateway {
 			.debit(accountToDebit!, payment.amount.toNumber())
 			.commit();
 
-			// mark the payment as fulfilled so it can't be reused
+		// mark the payment as fulfilled so it can't be reused
 		await prisma.payment.update({
 			where: {
 				id: payment.id,

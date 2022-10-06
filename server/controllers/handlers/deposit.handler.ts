@@ -2,7 +2,10 @@ import { Payment, PaymentGateway, PrismaClient, User } from "@prisma/client";
 import { isNil } from "lodash";
 import { PaymentGatewayEntrance } from "../../domain/deposit_gateways";
 import { GenericCheckerInternal } from "../middlewares/validation.middleware";
-import { DEPOSIT_VALIDATOR_BODY, INITIATE_PAYMENT_VALIDATOR_BODY } from "../validators/deposit.validator";
+import {
+	DEPOSIT_VALIDATOR_BODY,
+	INITIATE_PAYMENT_VALIDATOR_BODY,
+} from "../validators/deposit.validator";
 const prisma = new PrismaClient();
 
 export class DepositHandler {
@@ -20,28 +23,29 @@ export class DepositHandler {
 	async initiatePayment(data: {
 		user: User;
 		gateway: PaymentGateway;
-		amount: number,
-	}): Promise<Payment> {
+		amount: number;
+	}): Promise<Payment & { paymentUrl: string }> {
 		await GenericCheckerInternal(INITIATE_PAYMENT_VALIDATOR_BODY, data);
 		const { user, gateway, amount } = data;
 
 		const payment = await prisma.payment.create({
+			include: {
+				user: { select: { id: true, name: true, userTier: true } },
+			},
 			data: {
 				gateway,
 				userId: user.id,
-				amount
+				amount,
 			},
 		});
 
-		return payment;
+		const paymentUrl =
+			await PaymentGatewayEntrance.initiatePaymentInitialization(payment);
+		return { paymentUrl, ...payment,  };
 	}
 
 	// this is typically called by the payment provider via a webhook after they've successfully confirmed payment
-	async depositMoney(data: {
-		transactionReference: string,
-		amount: number,
-	}) {
-		
+	async depositMoney(data: { transactionReference: string; amount: number }) {
 		await GenericCheckerInternal(DEPOSIT_VALIDATOR_BODY, data);
 		const { transactionReference, amount } = data;
 
