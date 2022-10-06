@@ -66,6 +66,8 @@ npm run test
 
 # E-R Diagram
 
+[Public version](https://dbdiagram.io/d/633e4b78f0018a1c5fa48333)
+
 ![E-R Diagram](/ER_diagram.png)
 
 
