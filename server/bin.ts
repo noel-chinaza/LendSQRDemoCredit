@@ -10,6 +10,7 @@ import path from "path";
 import { AuthRouter } from "./controllers/routers/auth.router";
 import { ProfileRouter } from "./controllers/routers/profile.router";
 import { DepositRouter } from "./controllers/routers/deposit.router";
+import { exec, exec as plantSystemExec } from "../prisma/seed/plant_system";
 import { WithdrawalRouter } from "./controllers/routers/withdrawal.router";
 
 const prisma = new PrismaClient();
@@ -68,6 +69,7 @@ app.use("/coverage", express.static(path.join(__dirname, "/coverage")));
 app.use("/ui", express.static(path.join(__dirname, "/ui")));
 
 server.listen(process.env["PORT"], () => {
+	exec();
 	console.log(`Listening on port ${process.env["PORT"]}`);
 });
 
